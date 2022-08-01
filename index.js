@@ -3,7 +3,7 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-//const generatePage = require('./src/generate-page');
+const generatePage = require('./src/generate-page');
 const teamMembers = [];
 
 const promptManager = () => {
@@ -155,14 +155,14 @@ const promptIntern = () => {
     })
 }
 
-const buildTeam = teamMembers => {
+const buildTeam = () => {
 
     console.log(`
     =================
     Assemble the Team
     =================`);
 
-    /*const pageHTML = generatePage(teamMembers);
+    const pageHTML = generatePage(teamMembers);
     
         fs.writeFile('./dist/index.html', pageHTML, err => {
             if (err) {
@@ -177,9 +177,8 @@ const buildTeam = teamMembers => {
                 console.log(err);
                 return;
             }
-            console.log('Style sheet copied successfully!');
             });
-        })*/
+        })
     }
 
 promptManager();
