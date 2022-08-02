@@ -1,8 +1,10 @@
-const generateTeam = (team) => {
+const generateTeam = team => {
     console.log(team);
 
+    //empty array to store team member info
     const teamArray = [];
 
+    //functions for each employee category
     const generateManger = manager => {
         console.log(manager);
 
@@ -14,7 +16,7 @@ const generateTeam = (team) => {
                 </div>
                 <ul class = "list-group list-group-flush">
                     <li class = "list-group-item">ID: ${manager.id}</li>
-                    <li class = "list-group-item">E-mail: ${manager.email}</li>
+                    <li class = "list-group-item">E-mail: <a href="mailto: ${manager.email}">${manager.email}</a></li>
                     <li class = "list-group-item">Office Number: ${manager.officeNumber}</li>
                 </ul>
             </div>`;
@@ -32,8 +34,8 @@ const generateTeam = (team) => {
                 </div>
                 <ul class = "list-group list-group-flush">
                     <li class = "list-group-item">ID: ${engineer.id}</li>
-                    <li class = "list-group-item">E-mail: ${engineer.email}</li>
-                    <li class = "list-group-item">Github Username: ${engineer.github}</li>
+                    <li class = "list-group-item">E-mail: <a href="mailto: ${engineer.email}">${engineer.email}</a></li>
+                    <li class = "list-group-item">Github Username: <a href="http://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
                 </div>
             </div>`;
             teamArray.push(engineerHtml);
@@ -50,13 +52,14 @@ const generateTeam = (team) => {
                 </div>
                 <ul class = "list-group list-group-flush">
                     <li class = "list-group-item">ID: ${intern.id}</li>
-                    <li class = "list-group-item">E-mail: ${intern.email}</li>
+                    <li class = "list-group-item">E-mail: <a href="mailto: ${intern.email}">${intern.email}</a></li>
                     <li class = "list-group-item">School: ${intern.school}</li>
                 </div>
             </div>`;
             teamArray.push(internHtml);
     };
 
+    //loop to store employee info in appropriate category
     for (let i = 0; i < team.length; i++) {
         if (team[i].getRole() === 'Manager') {
             generateManger(team[i]);
@@ -69,9 +72,10 @@ const generateTeam = (team) => {
         }
     }
 
+    //bring team member array together
     return teamArray.join('');
 }
-
+//export function to generate page
 module.exports = team => {
 
     return `

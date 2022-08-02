@@ -54,6 +54,7 @@ const promptList = () => {
             choices: ['Engineer', 'Intern', 'Done']
         }
     ])
+    //switch function to choose employee category or default to the end to build the team
     .then(choice => {
         switch(choice.menu) {
             case "Engineer": promptEngineer();
@@ -162,8 +163,10 @@ const buildTeam = () => {
     Assemble the Team
     =================`);
 
+    //variable to hold generated page
     const pageHTML = generatePage(teamMembers);
     
+        //create html file in dist folder
         fs.writeFile('./dist/index.html', pageHTML, err => {
             if (err) {
                 console.log(err);
@@ -171,7 +174,7 @@ const buildTeam = () => {
             }
             console.log('Page created!');
 
-    
+        //copy style sheet to dist folder
         fs.copyFile('./src/style.css', './dist/style.css', err => {
             if (err) {
                 console.log(err);
