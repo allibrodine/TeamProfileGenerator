@@ -46,7 +46,7 @@ Example of generated webpage:
 
 View demo below:
 
-
+[TeamProfileDemo.webm](https://user-images.githubusercontent.com/105396175/182271935-36c80d42-760d-49e3-8835-2169ae8a98fc.webm)
 
 ## Collaboration
 
