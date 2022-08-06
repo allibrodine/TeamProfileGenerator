@@ -133,7 +133,7 @@ const promptIntern = () => {
             }
         },
         {
-            type: 'nnumber',
+            type: 'number',
             name: 'id',
             message: "Please enter the intern's employee ID number."
         },
